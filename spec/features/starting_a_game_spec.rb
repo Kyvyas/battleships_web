@@ -6,4 +6,6 @@ feature 'Starting a new game' do
     click_link 'New Game'
     expect(page).to have_content "What's your name"
   end
+
+  scenario 'When I click button '
 end

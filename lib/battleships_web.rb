@@ -5,6 +5,10 @@ class BattleshipsWeb < Sinatra::Base
     erb :index
   end
 
+  get '/New-Game' do
+    erb :new_game
+  end
+
   set :views, proc { File.join(root, '..', 'views') }
   # start the server if ruby file executed directly
   run! if app_file == $0
