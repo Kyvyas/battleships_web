@@ -6,10 +6,6 @@ feature 'Starting a new game' do
     click_submit_name_button
   end
 
-  # scenario 'set default name when none is entered' do
-  #   visit 
-  # end
-
   def asked_for_name
     visit '/'
     click_link 'New Game'
@@ -22,7 +18,11 @@ feature 'Starting a new game' do
     expect(page).to have_content "Registration successful"
   end
 
-  def no_name
+  scenario 'No name entered' do
+    visit '/New-Game'
+    name = ""
+    expect{ click_button 'Submit' }.to raise_error "Please enter your name"
   end
+
 
 end
