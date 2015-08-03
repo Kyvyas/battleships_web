@@ -1,14 +1,15 @@
  <div>
-  <% if @visitor %>
-    Registration successful <%= @visitor %>
-  <% else %>
    <form action="/New-Game">
       What's your name?
       <input type="text" name="name">
       <input type="submit" value="Submit">
-
-    </form>
-
+      <% if @error %>
+    No name entered!
+    <%= @error %>
+  <% end %>
+   </form>
+   <% if @visitor %>
+    Registration successful 
+    <%= @visitor %>
     <% end %>
-
-  </div>
+</div>

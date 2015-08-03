@@ -21,8 +21,8 @@ feature 'Starting a new game' do
   scenario 'No name entered' do
     visit '/New-Game'
     name = ""
-    expect{ click_button 'Submit' }.to raise_error "Please enter your name"
+    click_button 'Submit'
+    expect(page).to have_content "No name entered!"
   end
-
 
 end
